@@ -1,0 +1,41 @@
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.9\sbin>rabbitmq-plugins enable
+Error (argument validation): :not_enough_arguments
+Arguments given:
+        --formatter=plugins enable
+
+Usage:
+rabbitmq-plugins [-n <node>] [-l] [-q] enable <plugin>|--all [--offline] [--online]
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.9\sbin>rabbitmq-plugins enable rabbitmq_management
+Enabling plugins on node rabbit@JPDESK1:
+rabbitmq_management
+The following plugins have been configured:
+  rabbitmq_management
+  rabbitmq_management_agent
+  rabbitmq_web_dispatch
+Applying plugin configuration to rabbit@JPDESK1...
+The following plugins have been enabled:
+  rabbitmq_management
+  rabbitmq_management_agent
+  rabbitmq_web_dispatch
+
+started 3 plugins.
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.9\sbin>rabbitmqctl stop_app
+Stopping rabbit application on node rabbit@JPDESK1 ...
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.9\sbin>rabbitmqctl start_app
+Starting node rabbit@JPDESK1 ...
+ completed with 3 plugins.
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.9\sbin>rabbitmqctl add_user test test
+Adding user "test" ...
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.9\sbin>rabbitmqctl set_user_tags test administrator
+Setting tags for user "test" to [administrator] ...
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.9\sbin>rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
+Setting permissions for user "test" in vhost "/" ...
+
+C:\Program Files\RabbitMQ Server\rabbitmq_server-3.7.9\sbin>
