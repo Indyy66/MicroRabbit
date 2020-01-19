@@ -33,7 +33,7 @@ namespace MicroRabbit.Domain.Core.Bus
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <typeparam name="TH">The type of the h.</typeparam>
-        void Subsscribe<T, TH>()
+        void Subscribe<T, TH>()
             where T : Event
             where TH : IEventHandler<T>;
     }
