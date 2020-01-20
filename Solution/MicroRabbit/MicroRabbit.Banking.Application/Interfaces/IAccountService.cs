@@ -1,6 +1,7 @@
 ﻿
 namespace MicroRabbit.Banking.Application.Interfaces
 {
+    using MicroRabbit.Banking.Application.Models;
     using MicroRabbit.Banking.Domain.Models;
     using System.Collections.Generic;
 
@@ -14,5 +15,11 @@ namespace MicroRabbit.Banking.Application.Interfaces
         /// </summary>
         /// <returns></returns>
         IEnumerable<Account> GetAccounts();
+
+        /// <summary>
+        /// Transfers the specified account transfer.
+        /// </summary>
+        /// <param name="accountTransfer">The account transfer.</param>
+        void Transfer(AccountTransfer accountTransfer);
     }
 }

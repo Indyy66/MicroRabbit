@@ -6,6 +6,7 @@ namespace MicroRabbit.Banking.Api.Controllers
     using System.Linq;
     using System.Threading.Tasks;
     using MicroRabbit.Banking.Application.Interfaces;
+    using MicroRabbit.Banking.Application.Models;
     using MicroRabbit.Banking.Domain.Models;
     using Microsoft.AspNetCore.Mvc;
 
@@ -26,13 +27,25 @@ namespace MicroRabbit.Banking.Api.Controllers
         }
 
         /// <summary>
-        // GET api/banking
+        /// Gets this instance.
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         public ActionResult<IEnumerable<Account>> Get()
         {
             return Ok(_accountService.GetAccounts());
+        }
+
+        /// <summary>
+        /// Posts the specified account transfer.
+        /// </summary>
+        /// <param name="accountTransfer">The account transfer.</param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult Post([FromBody] AccountTransfer accountTransfer)
+        {
+            _accountService.Transfer(accountTransfer);
+            return Ok(accountTransfer);
         }
 
     }
