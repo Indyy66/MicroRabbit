@@ -5,7 +5,7 @@ namespace MicroRabbit.Banking.Data.Context
     using Microsoft.EntityFrameworkCore;
 
     /// <summary>
-    /// Banking Db Context class
+    /// Banking Database Context class
     /// </summary>
     /// <seealso cref="Microsoft.EntityFrameworkCore.DbContext" />
     public class BankingDbContext : DbContext
