@@ -21,7 +21,7 @@ namespace MicroRabbit.Transfer.Domain.Models
         /// <value>
         /// From account.
         /// </value>
-        public string FromAccount { get; set; }
+        public int FromAccount { get; set; }
 
         /// <summary>
         /// Converts to account.
@@ -29,7 +29,7 @@ namespace MicroRabbit.Transfer.Domain.Models
         /// <value>
         /// To account.
         /// </value>
-        public string ToAccount { get; set; }
+        public int ToAccount { get; set; }
 
         /// <summary>
         /// Gets or sets the transfer account.
@@ -37,7 +37,7 @@ namespace MicroRabbit.Transfer.Domain.Models
         /// <value>
         /// The transfer account.
         /// </value>
-        public decimal TransferAccount { get; set; }
+        public decimal TransferAmount { get; set; }
 
     }
 }

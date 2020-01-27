@@ -32,5 +32,16 @@ namespace MicroRabbit.Transfer.Data.Repository
         {
             return _context.TransferLogs;
         }
+
+        /// <summary>
+        /// Adds the specified transfer log.
+        /// </summary>
+        /// <param name="transferLog">The transfer log.</param>
+        public void Add(TransferLog transferLog)
+        {
+            _context.TransferLogs.Add(transferLog);
+            _context.SaveChanges();
+        }
+
     }
 }

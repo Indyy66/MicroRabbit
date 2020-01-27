@@ -14,5 +14,11 @@ namespace MicroRabbit.Transfer.Domain.Interfaces
         /// </summary>
         /// <returns></returns>
         IEnumerable<TransferLog> GetTransferLogs();
+
+        /// <summary>
+        /// Adds the specified transfer log.
+        /// </summary>
+        /// <param name="transferLog">The transfer log.</param>
+        void Add(TransferLog transferLog);
     }
 }

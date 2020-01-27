@@ -1,5 +1,5 @@
 ﻿
-namespace MicroRabbit.Banking.Domain.Events
+namespace MicroRabbit.Transfer.Domain.Events
 {
     using MicroRabbit.Domain.Core.Events;
 

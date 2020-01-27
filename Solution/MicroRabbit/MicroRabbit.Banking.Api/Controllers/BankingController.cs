@@ -11,6 +11,10 @@ namespace MicroRabbit.Banking.Api.Controllers
     using Microsoft.AspNetCore.Mvc;
 
 
+    /// <summary>
+    /// Banking Api controller
+    /// </summary>
+    /// <seealso cref="Microsoft.AspNetCore.Mvc.ControllerBase" />
     [Route("api/[controller]")]
     [ApiController]
     public class BankingController : ControllerBase

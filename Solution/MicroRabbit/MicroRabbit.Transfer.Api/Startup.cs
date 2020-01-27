@@ -7,7 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
+using System;
+using MicroRabbit.Domain.Core.Bus;
+using MicroRabbit.Transfer.Domain.Events;
+using MicroRabbit.Transfer.Domain.EventHandlers;
 
 namespace MicroRabbit.Transfer.Api
 {
@@ -80,6 +83,20 @@ namespace MicroRabbit.Transfer.Api
             });
 
             app.UseMvc();
+
+            ConfigureEventBus(app);
+
+        }
+
+        /// <summary>
+        /// Configures the event bus.
+        /// </summary>
+        /// <param name="app">The application.</param>
+        /// <exception cref="NotImplementedException"></exception>
+        private void ConfigureEventBus(IApplicationBuilder app)
+        {
+            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
+            eventBus.Subscribe<TransferCreatedEvent, TransferEventHandler>();
         }
     }
 }

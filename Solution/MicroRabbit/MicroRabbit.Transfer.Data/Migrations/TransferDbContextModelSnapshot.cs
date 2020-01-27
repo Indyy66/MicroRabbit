@@ -28,7 +28,7 @@ namespace MicroRabbit.Transfer.Data.Migrations
 
                     b.Property<string>("ToAccount");
 
-                    b.Property<decimal>("TransferAccount");
+                    b.Property<decimal>("TransferAmount");
 
                     b.HasKey("Id");
 

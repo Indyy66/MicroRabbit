@@ -15,7 +15,7 @@ namespace MicroRabbit.Transfer.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     FromAccount = table.Column<string>(nullable: true),
                     ToAccount = table.Column<string>(nullable: true),
-                    TransferAccount = table.Column<decimal>(nullable: false)
+                    TransferAmount = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
