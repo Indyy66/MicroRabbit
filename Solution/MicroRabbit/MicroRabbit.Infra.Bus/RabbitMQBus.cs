@@ -24,7 +24,7 @@ namespace MicroRabbit.Infra.Bus
         private readonly IMediator _mediator;
         private readonly Dictionary<string, List<Type>> _handlers;
         private readonly List<Type> _eventTypes;
-        private IServiceScopeFactory _serviceScopFactory;
+        private IServiceScopeFactory _serviceScopeFactory;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RabbitMQBus" /> class.
@@ -34,9 +34,9 @@ namespace MicroRabbit.Infra.Bus
         public RabbitMQBus(IMediator mediator, IServiceScopeFactory serviceScopeFactory)
         {
             _mediator = mediator;
+            _serviceScopeFactory = serviceScopeFactory;
             _handlers = new Dictionary<string, List<Type>>();
             _eventTypes = new List<Type>();
-            _serviceScopFactory = serviceScopeFactory;
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace MicroRabbit.Infra.Bus
         {
             if(_handlers.ContainsKey(eventName))
             {
-                using (var scope = _serviceScopFactory.CreateScope())
+                using (var scope = _serviceScopeFactory.CreateScope())
                 {
                     var subscriptions = _handlers[eventName];
                     foreach (var subscription in subscriptions)

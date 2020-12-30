@@ -16,7 +16,7 @@ namespace MicroRabbit.Transfer.Domain.Events
         /// <value>
         /// From.
         /// </value>
-        public int From { get; private set; }
+        public string From { get; private set; }
 
         /// <summary>
         /// Gets to.
@@ -24,7 +24,7 @@ namespace MicroRabbit.Transfer.Domain.Events
         /// <value>
         /// To.
         /// </value>
-        public int To { get; private set; }
+        public string To { get; private set; }
 
         /// <summary>
         /// Gets the amount.
@@ -38,7 +38,7 @@ namespace MicroRabbit.Transfer.Domain.Events
         /// <summary>
         /// Initializes a new instance of the <see cref="TransferCreatedEvent"/> class.
         /// </summary>
-        public TransferCreatedEvent(int from, int to, decimal amount)
+        public TransferCreatedEvent(string from, string to, decimal amount)
         {
             From = from;
             To = to;

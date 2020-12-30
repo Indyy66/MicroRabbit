@@ -30,7 +30,15 @@ namespace MicroRabbit.Transfer.Data.Repository
         /// <exception cref="System.NotImplementedException"></exception>
         public IEnumerable<TransferLog> GetTransferLogs()
         {
-            return _context.TransferLogs;
+            try
+            {
+                return _context.TransferLogs;
+            }
+            catch (System.Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         /// <summary>
